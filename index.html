@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title translate="yes">Dummy Tool</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="theme.js"></script>
+
+    <link href="vendor/patternfly/patternfly.min.css" type="text/css" rel="stylesheet" />
+    <link href="cockpit-glue.css" type="text/css" rel="stylesheet" />
+    <link href="index.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body class="pf-v6-m-tabular-nums">
+    <div class="ct-page-fill" id="app">
+        <div class="pf-v6-c-page no-masthead-sidebar">
+            <div class="pf-v6-c-page__main-container">
+                <main class="pf-v6-c-page__main" tabindex="-1">
+
+                    <section class="pf-v6-c-page__main-section pf-m-padding">
+                        <h1 class="pf-v6-c-title pf-m-2xl">My Custom Cockpit App</h1>
+                        <p class="pf-v6-u-mt-sm">
+                            This would be the descriptive mini-section of your tool
+                        </p>
+                    </section>
+
+                    <section class="pf-v6-c-page__main-section pf-m-no-padding-block">
+                        <div class="pf-v6-c-tabs">
+                            <ul class="pf-v6-c-tabs__list">
+                                <li class="pf-v6-c-tabs__item" id="tab-home">
+                                    <a class="pf-v6-c-tabs__link" href="#/">
+                                        <span class="pf-v6-c-tabs__item-text">Home</span>
+                                    </a>
+                                </li>
+                                <li class="pf-v6-c-tabs__item" id="tab-debug">
+                                    <a class="pf-v6-c-tabs__link" href="#/debug">
+                                        <span class="pf-v6-c-tabs__item-text">Debug</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="pane-home" class="pf-v6-c-page__main-section" hidden>
+                        <div class="pf-v6-c-card">
+                            <div class="pf-v6-c-card__header">
+                                <div class="pf-v6-c-card__header-main">
+                                    <div class="pf-v6-c-card__title">
+                                        <h2 class="pf-v6-c-card__title-text">And for more info..</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pf-v6-c-card__body">
+                                <p>
+                                    You can go <a href="https://github.com/complxdbg/cockpit-sample-app" target="_blank" rel="noopener noreferrer">here!</a> :)
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="pane-debug" class="pf-v6-c-page__main-section" hidden>
+                        <div class="pf-v6-c-card">
+                            <div class="pf-v6-c-card__header">
+                                <div class="pf-v6-c-card__header-main">
+                                    <div class="pf-v6-c-card__title">
+                                        <h2 class="pf-v6-c-card__title-text">Debug</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pf-v6-c-card__body">
+                                <button id="test-events-btn" class="pf-v6-c-button pf-m-secondary" type="button">
+                                    Test Events
+                                </button>
+                                <dl id="test-events-output" class="pf-v6-c-description-list pf-v6-u-mt-md" hidden>
+                                    <div class="pf-v6-c-description-list__group">
+                                        <dt class="pf-v6-c-description-list__term">Client-side Execution</dt>
+                                        <dd id="test-events-client-uuid" class="pf-v6-c-description-list__description"></dd>
+                                    </div>
+                                    <div class="pf-v6-c-description-list__group">
+                                        <dt class="pf-v6-c-description-list__term">Server-side Execution (same with 'dd')</dt>
+                                        <dd id="test-events-system-uuid" class="pf-v6-c-description-list__description"></dd>
+                                    </div>
+                                    <div class="pf-v6-c-description-list__group">
+                                        <dt class="pf-v6-c-description-list__term">Result</dt>
+                                        <dd id="test-events-result" class="pf-v6-c-description-list__description"></dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </div>
+                    </section>
+
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- Served by cockpit-ws itself (base1 package), not shipped in this package.
+             Needed for cockpit.* (cockpit.file, cockpit.spawn, cockpit.gettext, ...) to work,
+             and for the shell to be able to talk to this page at all. -->
+    <script src="../base1/cockpit.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

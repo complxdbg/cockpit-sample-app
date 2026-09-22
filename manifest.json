@@ -1,0 +1,14 @@
+{
+    "requires": {
+        "cockpit": "175"
+    },
+    "tools": {
+        "index": {
+            "label": "Dummy Tool",
+            "order": 100,
+            "keywords": [
+                { "matches": ["dummy", "example", "mytool"] }
+            ]
+        }
+    }
+}

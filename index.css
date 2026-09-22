@@ -1,0 +1,5 @@
+/* Page-specific tweaks. PatternFly (vendor/patternfly/patternfly.min.css) already covers card/page/table/button styling and light/dark tokens. */
+
+body {
+    min-height: 100vh;
+}
